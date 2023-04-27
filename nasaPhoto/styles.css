@@ -1,0 +1,43 @@
+
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+}
+.column {
+  flex: 50%;
+  margin: 20px;
+}
+
+#colA {
+  border-style: solid;
+  background-color:#eee;
+}
+
+img {
+  height: 650px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+}
+
+#photo {
+  padding: 20px;
+}
+
+#explanation {
+  padding: 30px;
+  background-color:#eee;
+  font-style: italic;
+  border-style: solid;
+  line-height: 1.5;
+}
+
