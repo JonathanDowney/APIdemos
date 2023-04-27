@@ -1,0 +1,36 @@
+<!--
+  This webpage displays the weather forecast for our house using the National Weather service API!
+-->
+
+<div>
+  <img src="weather.png" height="200px" style='display:block;margin:auto;'>
+  <br>
+  <h1>
+    <center>The weather forecast for our house: </center>
+  </h1>
+  <br>
+  <br>
+  <span id='demo'>
+  </span>
+</div>
+
+<script>
+  fetch('https://api.weather.gov/gridpoints/PQR/113,101/forecast')
+    .then((x) => x.json())
+    .then(y => myFunction(y.properties.periods))
+    .then(z => document.getElementById('demo').innerHTML = z);
+
+  function myFunction(y) {
+    let txt = "";
+    for (let item in y) {
+      txt += '<li>' + y[item].name.toUpperCase() + ': ' + y[item].detailedForecast + "<br><br>";
+    }
+    return txt;
+  }
+
+</script>
+
+<!--
+    To find the appropriate URI by coordinates:
+    https://api.weather.gov/points/45.4827,-122.6246
+-->
